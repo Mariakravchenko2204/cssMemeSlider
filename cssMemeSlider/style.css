@@ -8,21 +8,18 @@ html {
     padding: 0;
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
+
 
 .slider_container {
     width: 900px;
     height: 600px;
     margin: 0 auto;
     margin-top: 100px;
-    background-color: #4a4242;
-    border: 2px solid red;
+    background-color: #19535F;
+    border: 2px solid #00171F;
     display: flex;
     flex-direction: column;
+    gap: 20px
 }
 
 .slider_images {
@@ -40,29 +37,33 @@ html {
 
 
 .text {
-    width: 200px;
+    width: 150px;
+    height: 20px;
     color: azure;
     font-size: 20px;
+    margin-left: 40px;
     display: flex;
-    overflow-x: hidden ;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+    flex-direction: column;
+    overflow: hidden;
     white-space: nowrap;
+    padding: 10px;
+    gap: 10px;
 }
 .text p {
+    margin-top: 5px;
     flex: 1 0 100%;
     scroll-snap-align: start;
 }
 
-.slider_footer {
+/* .slider_footer {
     margin: 0 auto;
     width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
+} */
 
-.dot {
+/* .dot {
     align-self: center;
     margin: 10px;
     padding: 5px 5px 5px 5px;
@@ -71,21 +72,63 @@ html {
     background-color: rgb(34, 151, 214);
     display: inline-block;
     transform: translate(-50%);
-}
+} */
 
-.dot::after {
-    border: solid 2px rgb(179, 187, 245);
-    background: #4a4242;
-}
 
-.dot:hover{
-    border: solid 2px rgb(179, 187, 245);
-    background-color: rgb(179, 187, 245);
-    cursor: pointer;
-    
-}
+
 
 .slider_images img {
     flex: 1 0 100%;
     scroll-snap-align: start;
 }
+
+.slider_container > input {
+    display: none;
+}
+
+.slider_container label {
+  
+    outline: none;
+    content: " ";
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    padding: 10px;
+  
+}
+.elem{
+    width: 15px;
+    height: 15px;
+    border: 2px solid #C0FDFB;
+    border-radius: 50%;
+   
+  
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.controls {
+    margin-right: 40px;
+    padding: 10px;
+}
+
+
+
+label:hover {
+	cursor: pointer;	
+}
+
+
+#mem1:checked ~ .wrapper > .controls label > #elem1,
+#mem2:checked ~ .wrapper > .controls label > #elem2,
+#mem3:checked ~ .wrapper > .controls label > #elem3,
+#mem4:checked ~ .wrapper > .controls label > #elem4 {
+	background: #C0FDFB;
+  
+  
+}
+
+

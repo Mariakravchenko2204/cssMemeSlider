@@ -11,31 +11,36 @@
 
 <body>
     <div class="slider_container">
+        <input type="radio" name="mem" id="mem1" checked>
+        <input type="radio" name="mem" id="mem2">
+        <input type="radio" name="mem" id="mem3">
+        <input type="radio" name="mem" id="mem4">
+
         <div class="slider_images">
-            <img class="mem" id="mem1" src="./images/you_stay_in_Canada.jpg"
-                alt="Stay In Canada">
+            <img class="mem" id="mem1" src="./images/you_stay_in_Canada.jpg" alt="Stay In Canada">
             <img class="mem" id="mem2" src="./images/roads_in_Canada.jpg" alt="Roads in Canada are bad">
             <img class="mem" id="mem3" src="./images/Cobra_Chicken.jpeg" alt="Canadian Goose">
             <img class="mem" id="mem4" src="./images/meanwhile-in-canada-memes-63908f3154192__700.jpg"
                 alt="SMeanwhile in Canada">
         </div>
-        
-        <div class="slider_footer">
+
+        <div class="wrapper">
             <div class="text">
-                <p id="mem1">Don't stop you car!</p>
+                <p id="mem1">Don't stop your car!</p>
                 <p id="mem2">Drive carefully!</p>
                 <p id="mem3">Watch out for a goose!</p>
                 <p id="mem4">Is it cold???</p>
             </div>
-            <div class="controller">
-                <div class="dots">
-                    <a href="#mem1" class="dot"></a>
-                    <a href="#mem2" class="dot"></a>
-                    <a href="#mem3" class="dot"></a>
-                    <a href="#mem4" class="dot"></a>
-                </div>
+    
+            <div class="controls">
+                <label for="mem1"><div id="elem1" class="elem"></div></label>
+                <label for="mem2"><div id="elem2" class="elem"></div></label>
+                <label for="mem3"><div id="elem3" class="elem"></div></label>
+                <label for="mem4"><div id="elem4" class="elem"></div></label>
             </div>
+
         </div>
+        
 
     </div>
 </body>
