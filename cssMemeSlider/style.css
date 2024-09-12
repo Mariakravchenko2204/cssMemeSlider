@@ -19,21 +19,22 @@ html {
     border: 2px solid #00171F;
     display: flex;
     flex-direction: column;
-    gap: 20px
+}
+
+.slider__wrapper {
+    display: flex;
+    margin: 30px auto;
+    height: 80%; 
+    width: 745px; 
+    border-radius: 2%; 
+    overflow: hidden;
+    
 }
 
 .slider_images {
     display: flex;
-    margin: 30px auto;
-    height: 80%; 
-    width: 739px;
-    align-self: center;
-    border-radius: 2%;
-    overflow-x: hidden ;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+    width: 100%
 }
-
 
 
 .text {
@@ -49,37 +50,16 @@ html {
     padding: 10px;
     gap: 10px;
 }
+
 .text p {
     margin-top: 5px;
     flex: 1 0 100%;
     scroll-snap-align: start;
 }
 
-/* .slider_footer {
-    margin: 0 auto;
-    width: 90%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-} */
-
-/* .dot {
-    align-self: center;
-    margin: 10px;
-    padding: 5px 5px 5px 5px;
-    border-radius: 50px;
-    border: solid 2px rgb(34, 151, 214);
-    background-color: rgb(34, 151, 214);
-    display: inline-block;
-    transform: translate(-50%);
-} */
-
-
-
-
 .slider_images img {
     flex: 1 0 100%;
-    scroll-snap-align: start;
+   
 }
 
 .slider_container > input {
@@ -87,22 +67,18 @@ html {
 }
 
 .slider_container label {
-  
     outline: none;
     content: " ";
     display: inline-block;
     height: 15px;
     width: 15px;
-    padding: 10px;
-  
+    padding: 10px;  
 }
 .elem{
     width: 15px;
     height: 15px;
     border: 2px solid #C0FDFB;
-    border-radius: 50%;
-   
-  
+    border-radius: 50%;  
 }
 
 .wrapper{
@@ -116,19 +92,34 @@ html {
 }
 
 
-
 label:hover {
-	cursor: pointer;	
+	cursor: pointer;
+    .elem{
+        background: #C0FDFB;
+    }	
 }
-
 
 #mem1:checked ~ .wrapper > .controls label > #elem1,
 #mem2:checked ~ .wrapper > .controls label > #elem2,
 #mem3:checked ~ .wrapper > .controls label > #elem3,
 #mem4:checked ~ .wrapper > .controls label > #elem4 {
-	background: #C0FDFB;
-  
-  
+	background: #C0FDFB;  
 }
 
+.slider_images{
+    transition: margin-left 1s;
+}
+
+#mem1:checked ~ .slider__wrapper > .slider_images {
+    margin-left: 0;
+}
+#mem2:checked ~ .slider__wrapper > .slider_images {
+    margin-left: -100%;
+}
+#mem3:checked ~ .slider__wrapper > .slider_images  {
+    margin-left: -200%;
+}
+#mem4:checked ~ .slider__wrapper > .slider_images  {
+    margin-left: -300%;
+}
 
