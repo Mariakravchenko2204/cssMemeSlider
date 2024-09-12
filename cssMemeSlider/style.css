@@ -8,13 +8,11 @@ html {
     padding: 0;
 }
 
-
-
 .slider_container {
     width: 900px;
     height: 600px;
-    margin: 0 auto;
-    margin-top: 100px;
+    margin: auto auto;
+    margin-top: 30px;
     background-color: #19535F;
     border: 2px solid #00171F;
     display: flex;
@@ -24,11 +22,11 @@ html {
 .slider__wrapper {
     display: flex;
     margin: 30px auto;
-    height: 80%; 
-    width: 745px; 
-    border-radius: 2%; 
+    height: 80%;
+    width: 745px;
+    border-radius: 2%;
     overflow: hidden;
-    
+
 }
 
 .slider_images {
@@ -36,33 +34,41 @@ html {
     width: 100%
 }
 
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
-.text {
-    width: 150px;
-    height: 20px;
+.text__wrapper {
+    width: 180px;
+    height: 25px;
     color: azure;
     font-size: 20px;
     margin-left: 40px;
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    flex-direction: row;
     white-space: nowrap;
     padding: 10px;
     gap: 10px;
 }
 
-.text p {
-    margin-top: 5px;
-    flex: 1 0 100%;
-    scroll-snap-align: start;
+
+.text span {
+    display: none;
+
+
 }
 
 .slider_images img {
     flex: 1 0 100%;
-   
+
 }
 
-.slider_container > input {
+.slider_container>input {
     display: none;
 }
 
@@ -72,16 +78,17 @@ html {
     display: inline-block;
     height: 15px;
     width: 15px;
-    padding: 10px;  
+    padding: 10px;
 }
-.elem{
+
+.elem {
     width: 15px;
     height: 15px;
     border: 2px solid #C0FDFB;
-    border-radius: 50%;  
+    border-radius: 50%;
 }
 
-.wrapper{
+.wrapper {
     display: flex;
     justify-content: space-between;
 }
@@ -93,33 +100,57 @@ html {
 
 
 label:hover {
-	cursor: pointer;
-    .elem{
+    cursor: pointer;
+
+    .elem {
         background: #C0FDFB;
-    }	
+    }
 }
 
-#mem1:checked ~ .wrapper > .controls label > #elem1,
-#mem2:checked ~ .wrapper > .controls label > #elem2,
-#mem3:checked ~ .wrapper > .controls label > #elem3,
-#mem4:checked ~ .wrapper > .controls label > #elem4 {
-	background: #C0FDFB;  
+#mem1:checked~.wrapper>.controls label>#elem1,
+#mem2:checked~.wrapper>.controls label>#elem2,
+#mem3:checked~.wrapper>.controls label>#elem3,
+#mem4:checked~.wrapper>.controls label>#elem4 {
+    background: #C0FDFB;
 }
 
-.slider_images{
+.slider_images {
     transition: margin-left 1s;
 }
 
-#mem1:checked ~ .slider__wrapper > .slider_images {
+#mem1:checked~.slider__wrapper>.slider_images {
     margin-left: 0;
 }
-#mem2:checked ~ .slider__wrapper > .slider_images {
+
+#mem2:checked~.slider__wrapper>.slider_images {
     margin-left: -100%;
 }
-#mem3:checked ~ .slider__wrapper > .slider_images  {
+
+#mem3:checked~.slider__wrapper>.slider_images {
     margin-left: -200%;
 }
-#mem4:checked ~ .slider__wrapper > .slider_images  {
+
+#mem4:checked~.slider__wrapper>.slider_images {
     margin-left: -300%;
 }
 
+#mem1:checked~.wrapper>.text__wrapper>.text>#mem1 {
+    animation: appear 2s ease forwards;
+    display: block;
+}
+
+#mem2:checked~.wrapper>.text__wrapper>.text>#mem2 {
+   
+    animation: appear 2s ease forwards;
+    display: block;
+}
+
+#mem3:checked~.wrapper>.text__wrapper>.text>#mem3 {
+    animation: appear 2s ease forwards;
+    display: block;
+}
+
+#mem4:checked~.wrapper>.text__wrapper>.text>#mem4 {
+    animation: appear 2s ease forwards;
+    display: block;
+}
