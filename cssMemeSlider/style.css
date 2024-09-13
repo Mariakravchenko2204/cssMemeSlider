@@ -11,10 +11,10 @@ html {
 .slider_container {
     width: 900px;
     height: 600px;
-    margin: auto auto;
+    margin: 0 auto;
     margin-top: 30px;
     background-color: #19535F;
-    border: 2px solid #00171F;
+    border-radius: 2%;
     display: flex;
     flex-direction: column;
 }
@@ -23,10 +23,9 @@ html {
     display: flex;
     margin: 30px auto;
     height: 80%;
-    width: 745px;
+    width: 83%;
     border-radius: 2%;
     overflow: hidden;
-
 }
 
 .slider_images {
@@ -54,18 +53,15 @@ html {
     white-space: nowrap;
     padding: 10px;
     gap: 10px;
+    align-self: center;
 }
-
 
 .text span {
     display: none;
-
-
 }
 
 .slider_images img {
     flex: 1 0 100%;
-
 }
 
 .slider_container>input {
@@ -95,13 +91,10 @@ html {
 
 .controls {
     margin-right: 40px;
-    padding: 10px;
 }
-
 
 label:hover {
     cursor: pointer;
-
     .elem {
         background: #C0FDFB;
     }
@@ -140,7 +133,6 @@ label:hover {
 }
 
 #mem2:checked~.wrapper>.text__wrapper>.text>#mem2 {
-   
     animation: appear 2s ease forwards;
     display: block;
 }
@@ -153,4 +145,32 @@ label:hover {
 #mem4:checked~.wrapper>.text__wrapper>.text>#mem4 {
     animation: appear 2s ease forwards;
     display: block;
+}
+
+@media (max-width: 1000px) {
+    .slider__wrapper{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .slider_container {
+        max-width: 90%;
+        aspect-ratio: 3 / 2;
+        height: auto;
+    }
+    .controls{
+        margin-right: 0;
+    }
+    .text__wrapper{
+        margin-left: 20px;
+        align-self: flex-start;
+    }
+
+    .wrapper {
+        flex-direction: column-reverse;
+    }
+
+    .controls {
+        align-self: center;
+    }
 }
