@@ -9,8 +9,9 @@ html {
 }
 
 .slider_container {
-    width: 900px;
-    height: 600px;
+    width: 70%;
+    aspect-ratio: 3 / 2;
+    height: auto;
     margin: 0 auto;
     margin-top: 30px;
     background-color: #19535F;
@@ -32,6 +33,9 @@ html {
     display: flex;
     width: 100%
 }
+.text{
+    height: 100%;
+}
 
 @keyframes appear {
     from {
@@ -42,18 +46,12 @@ html {
     }
 }
 
+
 .text__wrapper {
-    width: 180px;
-    height: 25px;
-    color: azure;
-    font-size: 20px;
-    margin-left: 40px;
-    display: flex;
-    flex-direction: row;
-    white-space: nowrap;
-    padding: 10px;
-    gap: 10px;
-    align-self: center;
+    width: 50%;
+    height: 100%;
+    color: #C0FDFB;
+    font-size: 1.5em;
 }
 
 .text span {
@@ -64,16 +62,12 @@ html {
     flex: 1 0 100%;
 }
 
-.slider_container>input {
+.slider_container > input {
     display: none;
 }
 
 .slider_container label {
-    outline: none;
-    content: " ";
-    display: inline-block;
-    height: 15px;
-    width: 15px;
+    display: inline-block;  
     padding: 10px;
 }
 
@@ -86,15 +80,13 @@ html {
 
 .wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
-.controls {
-    margin-right: 40px;
-}
 
 label:hover {
     cursor: pointer;
+
     .elem {
         background: #C0FDFB;
     }
@@ -127,43 +119,36 @@ label:hover {
     margin-left: -300%;
 }
 
-#mem1:checked~.wrapper>.text__wrapper>.text>#mem1 {
+#mem1:checked ~ .wrapper > .text__wrapper > .text > #text1 {
     animation: appear 2s ease forwards;
     display: block;
 }
 
-#mem2:checked~.wrapper>.text__wrapper>.text>#mem2 {
+#mem2:checked ~ .wrapper > .text__wrapper > .text > #text2 {
     animation: appear 2s ease forwards;
     display: block;
 }
 
-#mem3:checked~.wrapper>.text__wrapper>.text>#mem3 {
+#mem3:checked ~ .wrapper > .text__wrapper > .text > #text3 {
     animation: appear 2s ease forwards;
     display: block;
 }
 
-#mem4:checked~.wrapper>.text__wrapper>.text>#mem4 {
+#mem4:checked ~ .wrapper > .text__wrapper > .text > #text4 {
     animation: appear 2s ease forwards;
     display: block;
 }
 
 @media (max-width: 1000px) {
-    .slider__wrapper{
+    .slider__wrapper {
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    
-    .slider_container {
-        max-width: 90%;
-        aspect-ratio: 3 / 2;
-        height: auto;
-    }
-    .controls{
-        margin-right: 0;
-    }
-    .text__wrapper{
-        margin-left: 20px;
-        align-self: flex-start;
+
+    .text__wrapper {
+        width: 100%;
+        margin-left: 40px;
+        margin-bottom: 10px;
     }
 
     .wrapper {
